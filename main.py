@@ -1,5 +1,12 @@
-#moi(Emmett) je suis con certe.
+# Donc l'idée c'est de faire un snake
 
-''' 
-Alors on fait quoi comme projet est ce que quelqu'un a une idée.
-'''
+from tkinter import *
+
+window = Tk()
+
+label = Label(window, text = "The Snake")
+label.pack()
+
+window.mainloop
+
+print("it works noow")

@@ -20,12 +20,5 @@ label.pack()
 button = Button(window, text = "+", fg='white', bg='blue', command=click)
 button.pack(side='right')
 
-
 # affiche la fenêtre
 window.mainloop()
-
-
-
-
-#Moi Emmett
-#Moi je mappelle

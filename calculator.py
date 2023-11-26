@@ -111,13 +111,15 @@ label = Label(window, text="The Calculator", fg='blue', bg='white')
 # place le "label" en haut de base
 label.grid()
 
-# les boutons de calculette
+# les boutons de calculette, appelé en fonction de leur position dans la  grille.
 
-# bouton pour la ligne 1. fg = forground, bg = background, commande = action au moment du clique
+# bouton pour la ligne 1
+
+# bouton 1 qui appelle la fonciton calc.add_1. fg = forground, bg = background, commande = action au moment du clique
 button_1 = Button(window, text = "1",width=5, height=5, fg='white', bg='blue', command=calc.add_1)
 # place le bouton dans une grille, ligne 1 et colonne 1.
 button_1.grid(row=1, column=1)
-
+ 
 button_2 = Button(window, text = "2",width=5, height=5, fg='white', bg='blue', command=calc.add_2)
 button_2.grid(row=1, column=2)
 
@@ -128,6 +130,7 @@ button_plus = Button(window, text = "+",width=5, height=5, fg='white', bg='blue'
 button_plus.grid(row=1, column=4)
 
 # bouton pour la ligne 2
+
 button_4 = Button(window, text = "4",width=5, height=5, fg='white', bg='blue', command=calc.add_4)
 button_4.grid(row=2, column=1)
 
@@ -141,6 +144,7 @@ button_minus = Button(window, text = "-",width=5, height=5, fg='white', bg='blue
 button_minus.grid(row=2, column=4)
 
 # bouton pour la ligne 3
+
 button_7 = Button(window, text = "7",width=5, height=5, fg='white', bg='blue', command=calc.add_7)
 button_7.grid(row=3, column=1)
 
@@ -151,6 +155,7 @@ button_9 = Button(window, text = "9",width=5, height=5, fg='white', bg='blue', c
 button_9.grid(row=3, column=3)
 
 # bouton pour la ligne 4
+
 button_0 = Button(window, text = "0",width=5, height=5, fg='white', bg='blue', command=calc.add_0)
 button_0.grid(row=4, column=2)
 
@@ -158,5 +163,5 @@ button_egal = Button(window, text = "=",width=5, height=5, fg='white', bg='blue'
 button_egal.grid(row=4, column=4)
 
 
-# affiche la fenêtre
+# appelle la fenêtre
 window.mainloop()

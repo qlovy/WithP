@@ -4,9 +4,9 @@ from tkinter import *
 
 window = Tk()
 
-label = Label(window, text = "The Snake")
+label = Label(window, text="The Snake")
 label.pack()
 
-window.mainloop
+window.mainloop()
 
 print("it works noow")

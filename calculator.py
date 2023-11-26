@@ -8,16 +8,23 @@ window = Tk()
 result = Label(window, text=0)
 
 class Calculator:
+    # exécuté à la création de l'objet
     def __init__(self):
         self.result = 0
         self.values = []
         
+# Ajout des chiffres
+
+    # ajoute 0 aux valeurs utilisées pours les calculs    
     def add_0(self):
+        # ajoute 0 comme nouvel élément du tableau
         self.values.append(0)
 
+    # ajoute 1 aux valeurs utilisles pours les calculs
     def add_1(self):
         self.values.append(1)
     
+    # ajoute 2, ...
     def add_2(self):
         self.values.append(2)
 
@@ -42,40 +49,53 @@ class Calculator:
     def add_9(self):
         self.values.append(9)
 
+# les opérations : addition, soustraction, division et multiplication
+
     def do_plus(self):
         for i in range(len(self.values)):
+            # additione les valeurs du tableau
             self.result = self.result + self.values[i]
-            # s'il effectue ça dernière opération
+            # fin de la phase de calcul
             if i + 1 == len(self.values):
+                # la première valeure du tableau devient le résultat de l'opération
                 self.values[0] = self.result
+                # supprime le reste de la liste à part la position 0
                 del self.values[1:len(self.values)]
 
     def do_minus(self):
         for i in range(len(self.values)):
+            # soustraient les valeurs du tableau
             self.result = self.result - self.values[i]
             if i + 1 == len(self.values):
                 self.values[0] = self.result
                 del self.values[1:len(self.values)]
 
     def do_divide(self):
-        for i in range(len(values)):
+        for i in range(len(self.values)):
+            # définition de résultat pour la division
             if i == 0:
                 self.result = self.values[i]
-            self.result = self.result / self.values[i]
+            else:
+                # divise le résultat par la prochaine valeurs du tableau
+                self.result = self.result / self.values[i]
+            # fin de l'opération, même chose que l'addition
             if i + 1 == len(self.values):
                 self.values[0] = self.result
                 del self.values[1:len(self.values)]
         
     def do_multiple(self):
-        for i in range(len(values)):
+        for i in range(len(self.values)):
             if i == 0:
                 self.result = self.values[i]
-            self.result = self.result / self.values[i]
+            else:
+                # multiplie les valeurs
+                self.result = self.result / self.values[i]
             if i + 1 == len(self.values):
                 self.values[0] = self.result
                 del self.values[1:len(self.values)]
 
     def do_egal(self):
+        # f sting qui affiche le résultat
         print(f'The result of your operation is {self.result}')
 
 
@@ -93,8 +113,9 @@ label.grid()
 
 # les boutons de calculette
 
-# bouton pour la ligne 1
+# bouton pour la ligne 1. fg = forground, bg = background, commande = action au moment du clique
 button_1 = Button(window, text = "1",width=5, height=5, fg='white', bg='blue', command=calc.add_1)
+# place le bouton dans une grille, ligne 1 et colonne 1.
 button_1.grid(row=1, column=1)
 
 button_2 = Button(window, text = "2",width=5, height=5, fg='white', bg='blue', command=calc.add_2)

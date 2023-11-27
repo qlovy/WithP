@@ -1,8 +1,18 @@
 # importe le module tkinter
 from tkinter import *
 
-# la variable window appelle l'interface
+# config de l'interface
+    # la variable window appelle l'interface
 window = Tk()
+
+    # titre de l'interface
+window.title("Calculatrice")
+
+    #icone de l'interface
+window.iconbitmap("icone.ico")
+
+    #couleur de l'interface
+window.config(bg = "#808080")
 
 # résultat des calculs
 result = Label(window, text=0)
@@ -108,59 +118,67 @@ window.geometry("300x400")
 # label, applique du texte dans la fenêtre
 label = Label(window, text="The Calculator", fg='blue', bg='white')
 
-# place le "label" en haut de base
+# place le "label" en haut de base "grid" permet de generer une grille ex: pour palcer les bouton ensuite
 label.grid()
 
 # les boutons de calculette, appelé en fonction de leur position dans la  grille.
 
+# affichage 
+
+
 # bouton pour la ligne 1
-
-# bouton 1 qui appelle la fonciton calc.add_1. fg = forground, bg = background, commande = action au moment du clique
-button_1 = Button(window, text = "1",width=5, height=5, fg='white', bg='blue', command=calc.add_1)
-# place le bouton dans une grille, ligne 1 et colonne 1.
-button_1.grid(row=1, column=1)
- 
-button_2 = Button(window, text = "2",width=5, height=5, fg='white', bg='blue', command=calc.add_2)
-button_2.grid(row=1, column=2)
-
-button_3 = Button(window, text = "3",width=5, height=5, fg='white', bg='blue', command=calc.add_3)
-button_3.grid(row=1, column=3)
-
-button_plus = Button(window, text = "+",width=5, height=5, fg='white', bg='blue', command=calc.do_plus)
-button_plus.grid(row=1, column=4)
+button_divide = Button(window, text = ":",width=6, height=2, fg='white', bg='blue', command=calc.add_7)
+button_divide.grid(row=2, column=4) # place le bouton dans une grille, ligne 1 et colonne 1.
 
 # bouton pour la ligne 2
+# bouton 1 qui appelle la fonciton calc.add_1. fg = forground, bg = background, commande = action au moment du clique 
+button_7 = Button(window, text = "7",width=6, height=2, fg='white', bg='blue', command=calc.add_7)
+button_7.grid(row=3, column=1) # place le bouton dans une grille, ligne 1 et colonne 1.
 
-button_4 = Button(window, text = "4",width=5, height=5, fg='white', bg='blue', command=calc.add_4)
-button_4.grid(row=2, column=1)
-
-button_5 = Button(window, text = "5",width=5, height=5, fg='white', bg='blue', command=calc.add_5)
-button_5.grid(row=2, column=2)
-
-button_6 = Button(window, text = "6",width=5, height=5, fg='white', bg='blue', command=calc.add_6)
-button_6.grid(row=2, column=3)
-
-button_minus = Button(window, text = "-",width=5, height=5, fg='white', bg='blue', command=calc.do_minus)
-button_minus.grid(row=2, column=4)
-
-# bouton pour la ligne 3
-
-button_7 = Button(window, text = "7",width=5, height=5, fg='white', bg='blue', command=calc.add_7)
-button_7.grid(row=3, column=1)
-
-button_8 = Button(window, text = "8",width=5, height=5, fg='white', bg='blue', command=calc.add_8)
+button_8 = Button(window, text = "8",width=6, height=2, fg='white', bg='blue', command=calc.add_8)
 button_8.grid(row=3, column=2)
 
-button_9 = Button(window, text = "9",width=5, height=5, fg='white', bg='blue', command=calc.add_9)
+button_9 = Button(window, text = "9",width=6, height=2, fg='white', bg='blue', command=calc.add_9)
 button_9.grid(row=3, column=3)
 
+button_multiply = Button(window, text = "X",width=6, height=2, fg='white', bg='blue', command=calc.add_9)
+button_multiply.grid(row=3, column=4)
+
+# bouton pour la ligne 3
+button_4 = Button(window, text = "4",width=6, height=2, fg='white', bg='blue', command=calc.add_4)
+button_4.grid(row=4, column=1)
+
+button_5 = Button(window, text = "5",width=6, height=2, fg='white', bg='blue', command=calc.add_5)
+button_5.grid(row=4, column=2)
+
+button_6 = Button(window, text = "6",width=6, height=2, fg='white', bg='blue', command=calc.add_6)
+button_6.grid(row=4, column=3)
+
+button_minus = Button(window, text = "-",width=6, height=2, fg='white', bg='blue', command=calc.do_minus)
+button_minus.grid(row=4, column=4)
+
 # bouton pour la ligne 4
+button_1 = Button(window, text = "1",width=6, height=2, fg='white', bg='blue', command=calc.add_1)
+button_1.grid(row=5, column=1)
+ 
+button_2 = Button(window, text = "2",width=6, height=2, fg='white', bg='blue', command=calc.add_2)
+button_2.grid(row=5, column=2)
 
-button_0 = Button(window, text = "0",width=5, height=5, fg='white', bg='blue', command=calc.add_0)
-button_0.grid(row=4, column=2)
+button_3 = Button(window, text = "3",width=6, height=2, fg='white', bg='blue', command=calc.add_3)
+button_3.grid(row=5, column=3)
 
-button_egal = Button(window, text = "=",width=5, height=5, fg='white', bg='blue', command=calc.do_egal)
-button_egal.grid(row=4, column=4)
+button_plus = Button(window, text = "+",width=6, height=2, fg='white', bg='blue', command=calc.do_plus)
+button_plus.grid(row=5, column=4)
+
+# bouton pour la ligne 5
+button_0 = Button(window, text = "0",width=6, height=2, fg='white', bg='blue', command=calc.add_0)
+button_0.grid(row=6, column=2)
+
+button_point = Button(window, text = ".",width=6, height=2, fg='white', bg='blue', command=calc.add_0)
+button_point.grid(row=6, column=3)
+
+button_egal = Button(window, text = "=",width=6, height=2, fg='white', bg='blue', command=calc.do_egal)
+button_egal.grid(row=6, column=4)
 
 
 # appelle la fenêtre

@@ -127,7 +127,7 @@ label.grid()
 
 
 # bouton pour la ligne 1
-button_divide = Button(window, text = ":",width=6, height=2, fg='white', bg='blue', command=calc.add_7)
+button_divide = Button(window, text = "/",width=6, height=2, fg='white', bg='blue', command=calc.add_7)
 button_divide.grid(row=2, column=4) # place le bouton dans une grille, ligne 1 et colonne 1.
 
 # bouton pour la ligne 2
@@ -141,7 +141,7 @@ button_8.grid(row=3, column=2)
 button_9 = Button(window, text = "9",width=6, height=2, fg='white', bg='blue', command=calc.add_9)
 button_9.grid(row=3, column=3)
 
-button_multiply = Button(window, text = "X",width=6, height=2, fg='white', bg='blue', command=calc.add_9)
+button_multiply = Button(window, text = "x",width=6, height=2, fg='white', bg='blue', command=calc.add_9)
 button_multiply.grid(row=3, column=4)
 
 # bouton pour la ligne 3
@@ -183,3 +183,4 @@ button_egal.grid(row=6, column=4)
 
 # appelle la fenêtre
 window.mainloop()
+

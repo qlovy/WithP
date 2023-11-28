@@ -20,7 +20,7 @@ result = Label(window, text=0)
 class Calculator:
     # exécuté à la création de l'objet
     def __init__(self):
-        self.result = 0
+        self.result = 0.0
         self.values = []
         
 # Ajout des chiffres
@@ -108,6 +108,9 @@ class Calculator:
         # f sting qui affiche le résultat
         print(f'The result of your operation is {self.result}')
 
+    def do_reset(self):
+        self.result = 0.0
+
 
 # définir l'objet
 calc = Calculator()
@@ -123,17 +126,19 @@ label.grid()
 
 # les boutons de calculette, appelé en fonction de leur position dans la  grille.
 
-# affichage 
-
-
 # bouton pour la ligne 1
+
+# définit un bouton avec des paramètres définis (texte, largeur, hauteur, avant plan, arrière plan, action quand on clique le bouton)
+button_CE = Button(window, text="CE", width=6, height=2, fg='white', bg='blue', command=calc.do_reset)
+button_CE.grid(row=2, column=3)
+
 button_divide = Button(window, text = "/",width=6, height=2, fg='white', bg='blue', command=calc.add_7)
-button_divide.grid(row=2, column=4) # place le bouton dans une grille, ligne 1 et colonne 1.
+button_divide.grid(row=2, column=4)
 
 # bouton pour la ligne 2
-# bouton 1 qui appelle la fonciton calc.add_1. fg = forground, bg = background, commande = action au moment du clique 
+
 button_7 = Button(window, text = "7",width=6, height=2, fg='white', bg='blue', command=calc.add_7)
-button_7.grid(row=3, column=1) # place le bouton dans une grille, ligne 1 et colonne 1.
+button_7.grid(row=3, column=1)
 
 button_8 = Button(window, text = "8",width=6, height=2, fg='white', bg='blue', command=calc.add_8)
 button_8.grid(row=3, column=2)

@@ -105,24 +105,22 @@ class Calculator:
                 del self.values[1:len(self.values)]
 
     def do_egal(self):
-        self.printResult = Label(window, text=self.result, fg='blue', bg='white')
-        self.printResult.grid(row=1, column=2)
+        self.printResult = Label(window, text=self.result, fg='white', bg='#34495e', anchor="e", justify="right")
+        self.printResult.grid(row=1, column=2, columnspan=4)
 
     def do_reset(self):
         self.result = 0.0
-
 
 # définir l'objet
 calc = Calculator()
 
 # taille de la fenêtre
 window.geometry("300x400")
+window.grid()
 
-# label, applique du texte dans la fenêtre
-heading = Label(window, text="The Calculator", fg='blue', bg='white')
-
-# place le "label" en haut de base. La fonction "grid" permet de generer une grille ex: pour palcer les bouton ensuite
-heading.grid()
+# le résultat
+printResult = Label(window, text='', fg='white', bg='#34495e',width=29, height=2)
+printResult.grid(row=1, column=1, columnspan=4)
 
 # les boutons de calculette, appelé en fonction de leur position dans la  grille.
 

@@ -187,3 +187,4 @@ button_egal.grid(row=6, column=4)
 # appelle la fenêtre
 window.mainloop()
 
+#Salut c'est paulo
